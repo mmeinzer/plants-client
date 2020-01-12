@@ -13,6 +13,7 @@ const plants = [
     scientific: 'Lorem Ipsum',
     watered: '5 days ago',
     checked: 'yesterday',
+    icon: './jade.svg',
     check: false
   },
   {
@@ -21,6 +22,7 @@ const plants = [
     scientific: 'Sindaptus Pictus',
     watered: '9 days ago',
     checked: '9 days ago',
+    icon: './jade.svg',
     check: true
   },
   {
@@ -29,6 +31,7 @@ const plants = [
     scientific: 'Plurbus Unum',
     watered: 'yesterday',
     checked: 'yesterday',
+    icon: './jade.svg',
     check: false
   },
   {
@@ -37,6 +40,7 @@ const plants = [
     scientific: 'Finadlus Ictus',
     watered: 'today',
     checked: 'today',
+    icon: './jade.svg',
     check: false
   }
 ]
@@ -55,12 +59,12 @@ const Home = () => (
       <div className="mx-2">
         <div className="mt-2 pb-6 flex flex-col flex-wrap justify-start md:flex-row border-b md:px-4 md:pb-0">
           {plants.filter(plant => plant.check).map(plant => (
-            <PlantCard details={plant} />
+            <PlantCard key={plant.name} details={plant} />
           ))}
         </div>
         <div className="mt-2 flex flex-col flex-wrap justify-start md:flex-row md:px-4">
           {plants.filter(plant => !plant.check).map(plant => (
-            <PlantCard details={plant} />
+            <PlantCard key={plant.name} details={plant} />
           ))}
         </div>
       </div>
